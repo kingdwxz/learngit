@@ -20,3 +20,8 @@ git status
 git diff readme.txt
 
 查看完之后，按q退出当前文档即可。
+
+查看git提交修改记录
+git log
+
+如果嫌输出信息太多，看得眼花缭乱的，可以试试加上--pretty=oneline参数：
