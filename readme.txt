@@ -25,3 +25,6 @@ git diff readme.txt
 git log
 
 如果嫌输出信息太多，看得眼花缭乱的，可以试试加上--pretty=oneline参数：
+
+如果要回退到上一个版本，则使用下面的命令
+git reset --hard HEAD^
