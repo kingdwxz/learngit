@@ -28,3 +28,8 @@ git log
 
 如果要回退到上一个版本，则使用下面的命令
 git reset --hard HEAD^
+或者
+git reset --hard 版本号
+
+查看每一次命令执行语句
+git reflog
