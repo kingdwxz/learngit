@@ -75,4 +75,5 @@ Git鼓励大量使用分支：
 合并某分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
 
-Creating a new branch is quick & simple.
+退出编辑页面
+按下ESC，再连按两下大写的字母Z
