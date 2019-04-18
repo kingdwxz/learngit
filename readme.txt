@@ -33,3 +33,6 @@ git reset --hard 版本号
 
 查看每一次命令执行语句
 git reflog
+
+如果想对比本地文件和版本库中文件的区别，用以下命令
+git diff HEAD --readme.txt
