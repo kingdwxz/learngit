@@ -77,3 +77,69 @@ Git鼓励大量使用分支：
 
 退出编辑页面
 按下ESC，再连按两下大写的字母Z
+
+用git log --graph命令可以看到分支合并图。
+
+合并分支禁用fast forward
+it merge --no-ff -m "merge with no-ff" dev
+
+查看远程库信息
+git remote
+或者
+git remote -v 显示更详细的信息
+
+创建远程dev分支到本地
+git checkout -b dev origin/dev
+
+设置本地dev分支与远程origin/dev分支关联
+git branch --set-upstream dev origin/dev
+
+将最新的提交拉取到本地
+git pull
+
+多人写作模式
+首先，可以试图用git push origin <branch-name>推送自己的修改；
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+
+如果合并有冲突，则解决冲突，并在本地提交；
+
+没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+
+这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
+
+
+命令git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+
+命令git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+
+命令git tag可以查看所有标签。
+
+命令git push origin <tagname>可以推送一个本地标签；
+命令git push origin --tags可以推送全部未推送过的本地标签；
+命令git tag -d <tagname>可以删除一个本地标签；
+命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
+
+
+
+
+
+==============================================================================================================
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin ssh://kingd@192.168.1.116:29418/test.git
+git push -u origin master
+
+
+git remote add origin ssh://kingd@192.168.1.116:29418/test.git
+git push -u origin master
+
+删除分支
+1、删除本地分支
+git branch -d BranchName
+2、远程删除git服务器上的分支：
+git push origin -d BranchName
